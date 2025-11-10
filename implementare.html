@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluția de implementare - MedConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>MedConnect</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Scopul aplicației</a></li>
+            <li><a href="descriere.html">Descrierea aplicației</a></li>
+            <li><a href="arhitectura.html">Arhitectura aplicației</a></li>
+            <li><a href="baza_date.html">Baza de date</a></li>
+            <li><a href="implementare.html" class="active">Soluția de implementare</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="card">
+        <h2>Soluția de implementare propusă</h2>
+        <h3>Tehnologii folosite:</h3>
+        <ul>
+            <li><strong>PHP</strong> – pentru logica aplicației și interacțiunea cu baza de date</li>
+            <li><strong>MySQL</strong> – pentru stocarea datelor despre utilizatori, pacienți, programări, fișe medicale, analize etc.</li>
+            <li><strong>HTML + CSS</strong> – pentru structura și aspectul vizual al paginilor web</li>
+            <li><strong>JavaScript</strong> – pentru funcționalități dinamice, validări și notificări</li>
+        </ul>
+
+        <h3>Funcționalități principale:</h3>
+        <ul>
+            <li>Autentificare și redirecționare după rol: administrator, medic, asistent, receptionist, pacient</li>
+            <li>CRUD pentru toate entitățile principale: pacienți, programări, fișe medicale, analize, rețete, plăți</li>
+            <li>Gestionarea programărilor și notificarea pacienților prin email sau SMS</li>
+            <li>Vizualizarea istoricului pacienților (vizite, analize, tratamente, plăți)</li>
+            <li>Generarea rapoartelor și statistici pentru administratori</li>
+            <li>Controlul accesului la date în funcție de rol</li>
+        </ul>
+
+        <div class="image-grid">
+            <img src="imagini/medic.png" alt="medic" class="diagram">
+            <img src="imagini/asistent.png" alt="asistent" class="diagram">
+            <img src="imagini/pacient.png" alt="pacient" class="diagram">
+            <img src="imagini/receptionist.png" alt="receptionist" class="diagram">
+            <img src="imagini/administrator.png" alt="administrator" class="diagram">
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Proiect PHP - Cazamir Mara-Andreea, grupa 233</p>
+</footer>
+</body>
+</html>

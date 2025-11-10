@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #333;
+    line-height: 1.6; /* puțin mai compact */
+    font-size: 0.95rem; /* text mai mic implicit */
+}
+
+/* --- HEADER --- */
+header {
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    color: white;
+    padding: 18px 0;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem; /* mai mic */
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ffd600, #ff6f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: #ffd600;
+    color: #0077b6;
+    transform: scale(1.1);
+}
+
+/* --- MAIN CONTENT --- */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    background: linear-gradient(to right, #caf0f8, #90e0ef);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 1s ease forwards;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* --- TITLURI --- */
+h2 {
+    font-size: 1.5rem; /* mai mic */
+    color: #0077b6;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #00b4d8;
+    margin: 6px auto 0;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.15rem; /* mai mic */
+    color: #023e8a;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+/* --- PARAGRAFE --- */
+p {
+    font-weight: 400;
+    font-size: 0.9rem; /* mai mic */
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* --- LISTE --- */
+ul {
+    margin: 10px 0 18px 28px;
+}
+
+li {
+    margin-bottom: 6px;
+    position: relative;
+}
+
+li::before {
+    content: "✔";
+    color: #00b4d8;
+    font-weight: bold;
+    display: inline-block;
+    width: 18px;
+}
+
+/* --- TABLE --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 8px 10px; /* mai mic */
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    color: #fff;
+    font-weight: 600;
+}
+
+td {
+    background: #f0f4f8;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    margin-top: 20px;
+    border-radius: 0 0 20px 20px;
+    font-weight: 500;
+    font-size: 0.85rem; /* mai mic */
+}
+
+/* --- IMAGINI --- */
+img.diagram {
+    max-width: 70%;       /* imaginea va ocupa maxim 70% din lățimea containerului */
+    height: auto;         /* păstrează proporțiile */
+    display: block;
+    margin: 20px auto;    /* centru și spațiu sus/jos */
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInImage 1s forwards;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 imagini pe rând */
+    gap: 10px; /* mai mic, imagini mai mari */
+    margin-top: 20px;
+}
+
+.image-grid img.diagram {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInImage 1s forwards;
+}
+
+.image-grid img.diagram:hover {
+    transform: scale(1.12); /* mai mare efect WOW la hover */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Al doilea rând centrat și mai mare */
+.image-grid img.diagram:nth-child(n+4) {
+    width: 95%;           /* aproape full width pe al doilea rând */
+    justify-self: center;
+}
+
+/* Responsive pentru ecrane mai mici */
+@media (max-width: 900px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .image-grid img.diagram:nth-child(n+4) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .image-grid img.diagram:nth-child(n+4) {
+        width: 100%;
+    }
+}
+
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* --- ANIMATII --- */
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(15px);}
+    100% {opacity: 1; transform: translateY(0);}
+}

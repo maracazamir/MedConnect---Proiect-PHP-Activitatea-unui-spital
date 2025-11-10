@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baza de date - MedConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>MedConnect</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Scopul aplicației</a></li>
+            <li><a href="descriere.html">Descrierea aplicației</a></li>
+            <li><a href="arhitectura.html">Arhitectura aplicației</a></li>
+            <li><a href="baza_date.html" class="active">Baza de date</a></li>
+            <li><a href="implementare.html">Soluția de implementare</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="card">
+        <h2>Descreierea bazei de date</h2>
+        <p>Baza de date a aplicației MedConnect gestionează toate informațiile legate de activitatea spitalului, atât pentru personalul medical, cât și pentru pacienți sau administratori.</p>
+
+        <h3>Tabele principale și atribute:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tabel</th>
+                    <th>Descriere</th>
+                    <th>Atribute principale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>utilizator</td>
+                    <td>Sistem login și roluri</td>
+                    <td>id_utilizator, nume, prenume, email, parola, rol</td>
+                </tr>
+                <tr>
+                    <td>pacient</td>
+                    <td>Informații personale și medicale</td>
+                    <td>id_pacient, utilizator_id, CNP, data_nasterii, adresa, telefon, email, fisa_medicala_id</td>
+                </tr>
+                <tr>
+                    <td>medic</td>
+                    <td>Date despre medici și specializări</td>
+                    <td>id_medic, utilizator_id, sectie_id, specializare, email, telefon, program</td>
+                </tr>
+                <tr>
+                    <td>asistent</td>
+                    <td>Personal auxiliar</td>
+                    <td>id_asistent, utilizator_id, sectie_id, email, telefon, program</td>
+                </tr>
+                <tr>
+                    <td>receptionist</td>
+                    <td>Personal recepție</td>
+                    <td>id_receptionist, utilizator_id, email, telefon, program</td>
+                </tr>
+                <tr>
+                    <td>sectie</td>
+                    <td>Structura spitalului și specializările</td>
+                    <td>id_sectie, nume_sectie, descriere</td>
+                </tr>
+                <tr>
+                    <td>sala</td>
+                    <td>Săli de consultație și ture</td>
+                    <td>id_sala, sectie_id, nume_sala, capacitate, disponibilitate</td>
+                </tr>
+                <tr>
+                    <td>programare</td>
+                    <td>Rezervări consultații și programări</td>
+                    <td>id_programare, pacient_id, medic_id, asistent_id, sala_id, data_ora, stare, notificare_trimis</td>
+                </tr>
+                <tr>
+                    <td>fisa_medicala</td>
+                    <td>Fișă medicală cu diagnostic și tratament</td>
+                    <td>id_fisa, pacient_id, diagnostic, tratament, data_actualizare</td>
+                </tr>
+                <tr>
+                    <td>reteta</td>
+                    <td>Rețete generate de medic</td>
+                    <td>id_reteta, fisa_medicala_id, medic_id, medicament_id, doza, instructiuni</td>
+                </tr>
+                <tr>
+                    <td>medicament</td>
+                    <td>Bază de date medicamente</td>
+                    <td>id_medicament, nume, concentratie, producator</td>
+                </tr>
+                <tr>
+                    <td>analiza</td>
+                    <td>Rezultatele analizelor pacienților</td>
+                    <td>id_analiza, pacient_id, programare_id, tip_analiza, rezultat, data_analiza</td>
+                </tr>
+                <tr>
+                    <td>mesaj_contact</td>
+                    <td>Emailuri și mesaje trimise de utilizatori</td>
+                    <td>id_mesaj, pacient_id, subiect, mesaj, data_trimitere</td>
+                </tr>
+                <tr>
+                    <td>raport</td>
+                    <td>Fișiere generate de administrator</td>
+                    <td>id_raport, utilizator_id, titlu, fisier, data_creare</td>
+                </tr>
+                <tr>
+                    <td>statistica</td>
+                    <td>Statistici ale fiecărui pacient</td>
+                    <td>id_statistica, pacient_id, numar_vizite, cheltuiala_totala, perioada</td>
+                </tr>
+                <tr>
+                    <td>plata</td>
+                    <td>Plăți efectuate de pacienți</td>
+                    <td>id_plata, pacient_id, programare_id, suma, data_plata, metoda_plata</td>
+                </tr>
+                <tr>
+                    <td>notificare</td>
+                    <td>Notificări pentru pacienți</td>
+                    <td>id_notificare, programare_id, pacient_id, tip, mesaj, data_trimitere, status</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="imagini/diagrama.jpeg" alt="Diagrama relațiilor între tabele" class="diagram">
+
+        <h3>Relațiile între tabele</h3>
+        <p>Utilizator – pacient / medic / asistent / receptionist: 1:1</p>
+        <ul>
+            <li>pacient.utilizator_id → utilizator.id_utilizator</li>
+            <li>medic.utilizator_id → utilizator.id_utilizator</li>
+            <li>asistent.utilizator_id → utilizator.id_utilizator</li>
+            <li>receptionist.utilizator_id → utilizator.id_utilizator</li>
+        </ul>
+
+        <p>Pacient – fisa_medicala: 1:1</p>
+        <ul>
+            <li>fisa_medicala.pacient_id → pacient.id_pacient</li>
+        </ul>
+
+        <p>Fisa_medicala – reteta: 1:N</p>
+        <ul>
+            <li>reteta.fisa_medicala_id → fisa_medicala.id_fisa</li>
+        </ul>
+
+        <p>Reteta – medicament: N:1</p>
+        <ul>
+            <li>reteta.medicament_id → medicament.id_medicament</li>
+        </ul>
+
+        <p>Pacient – analiza: 1:N</p>
+        <ul>
+            <li>analiza.pacient_id → pacient.id_pacient</li>
+        </ul>
+
+        <p>Sectie – sala: 1:N</p>
+        <ul>
+            <li>sala.sectie_id → sectie.id_sectie</li>
+        </ul>
+
+        <p>Medic / Asistent / Pacient – programare: 1:N</p>
+        <ul>
+            <li>programare.medic_id → medic.id_medic</li>
+            <li>programare.asistent_id → asistent.id_asistent</li>
+            <li>programare.pacient_id → pacient.id_pacient</li>
+            <li>programare.sala_id → sala.id_sala</li>
+        </ul>
+
+        <p>Programare – notificare: 1:N (opțional)</p>
+        <ul>
+            <li>Fiecare programare poate genera notificări pentru pacient.</li>
+        </ul>
+
+        <p>Pacient – plata: 1:N</p>
+        <ul>
+            <li>plata.pacient_id → pacient.id_pacient</li>
+        </ul>
+
+        <p>Pacient – statistica: 1:1</p>
+        <ul>
+            <li>statistica.pacient_id → pacient.id_pacient</li>
+        </ul>
+
+        <p>Pacient – mesaj_contact: 1:N</p>
+        <ul>
+            <li>mesaj_contact.pacient_id → pacient.id_pacient</li>
+        </ul>
+
+        <p>Administrator – raport: 1:N</p>
+        <ul>
+            <li>raport.utilizator_id → utilizator.id_utilizator (cu rol administrator)</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Proiect PHP - Cazamir Mara-Andreea, grupa 233</p>
+</footer>
+</body>
+</html>

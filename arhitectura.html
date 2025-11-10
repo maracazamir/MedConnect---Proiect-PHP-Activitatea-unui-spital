@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arhitectura aplicației - MedConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>MedConnect</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Scopul aplicației</a></li>
+            <li><a href="descriere.html">Descrierea aplicației</a></li>
+            <li><a href="arhitectura.html" class="active">Arhitectura aplicației</a></li>
+            <li><a href="baza_date.html">Baza de date</a></li>
+            <li><a href="implementare.html">Soluția de implementare</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="card">
+        <h2>Arhitectura aplicației</h2>
+        <p>Aplicația web MedConnect este organizată pe o arhitectură simplă, specifică aplicațiilor web dezvoltate în PHP și MySQL, fiind structurată pe trei componente principale: interfața utilizatorului (front-end), logica aplicației (back-end) și baza de date.</p>
+
+        <h3>Roluri și acces</h3>
+        <ul>
+            <li><strong>Administrator:</strong> gestionează întreaga aplicație, controlează utilizatorii, secțiile spitalului, orarele și resursele. Are acces complet la toate datele.</li>
+            <li><strong>Medic:</strong> vizualizează și actualizează fișele pacienților, adaugă diagnostice, eliberează rețete și verifică programul asistenților.</li>
+            <li><strong>Asistent:</strong> completează fișele medicale, adaugă analize, gestionează programările pacienților și verifică disponibilitatea sălilor.</li>
+            <li><strong>Recepționist:</strong> gestionează programările pacienților, poate adăuga, reprograma sau anula vizite și are acces la datele personale ale pacienților pentru contact și informare.</li>
+            <li><strong>Pacient:</strong> vizualizează propriile date medicale, istoricul vizitelor și analizelor, tratamentele primite și programările viitoare.</li>
+        </ul>
+
+        <h3>Entități principale</h3>
+        <ul>
+            <li>Pacient</li>
+            <li>Medic</li>
+            <li>Asistent</li>
+            <li>Recepționist</li>
+            <li>Administrator</li>
+            <li>Programare</li>
+            <li>FisaMedicala</li>
+            <li>Sectie</li>
+            <li>Resursa</li>
+            <li>Reteta</li>
+        </ul>
+
+        <h3>Procese principale</h3>
+        <ul>
+            <li>Pacientul se autentifică și accesează istoricul său medical.</li>
+            <li>Recepționistul programează, replanifică sau anulează vizite.</li>
+            <li>Asistentul completează și actualizează fișele pacienților după consultații.</li>
+            <li>Medicul consultă pacienții, adaugă diagnostice și eliberează rețete.</li>
+            <li>Administratorul monitorizează activitatea generală, gestionează utilizatorii și resursele.</li>
+        </ul>
+
+        <h3>Componentele sistemului</h3>
+        <ul>
+            <li><strong>Front-end:</strong> HTML, CSS și JavaScript pentru interfața utilizatorului.</li>
+            <li><strong>Back-end:</strong> PHP pentru logica aplicației, autentificare și conexiunea cu baza de date.</li>
+            <li><strong>Baza de date:</strong> MySQL pentru stocarea datelor despre utilizatori, pacienți, programări, fișe medicale și resurse.</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Proiect PHP - Cazamir Mara-Andreea, grupa 233</p>
+</footer>
+</body>
+</html>
