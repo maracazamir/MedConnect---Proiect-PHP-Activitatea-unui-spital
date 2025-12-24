@@ -1,5 +1,8 @@
 # MedConnect---Proiect-PHP-Activitatea-unui-spital
 
+
+### Tema 1:
+
 ## Descriere
 MedConnect este o aplicație web care organizează și gestionează activitatea unui spital. Aplicația centralizează datele despre pacienți, programări, fișe medicale, rețete, analize, plăți și notificări, oferind acces diferit în funcție de rol: administrator, medic, asistent, recepționist sau pacient.
 
@@ -24,4 +27,29 @@ Pagina principală oferă informații generale despre spital: logo, program, loc
 - CRUD complet pentru pacienți, programări, fișe medicale, analize, rețete și plăți  
 - Gestionarea programărilor și notificarea pacienților  
 - Vizualizarea istoricului și a datelor medicale  
-- Generarea rapoartelor și statisticilor pentru administratori  
+- Generarea rapoartelor și statisticilor pentru administratori
+
+
+
+
+## Tema 2
+
+- Link: [Tema 2](https://maracazamir-daw-php.infinityfree.me/tema2/)  
+- Cont de test:  
+  - **Email:** admin@medconnect.com  
+  - **Parola:** 123456  
+
+---
+
+## Tema 3
+
+- Link: [Tema 3](https://maracazamir-daw-php.infinityfree.me/tema3/)  
+- Conturi de test:  
+
+| Rol     | Email                | Parola       |
+|---------|---------------------|-------------|
+| Admin   | admin@medconnect.com | 123456      |
+| Pacient | pacient@mail.com     | pacient123  |
+| Medic   | medic@medconnect.com | medic123    |
+| Asistent| asistent@medconnect.com | asistent123 |
+
