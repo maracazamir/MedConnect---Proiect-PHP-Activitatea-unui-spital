@@ -53,3 +53,39 @@ Pagina principală oferă informații generale despre spital: logo, program, loc
 | Medic   | medic@medconnect.com | medic123    |
 | Asistent| asistent@medconnect.com | asistent123 |
 
+
+## Tema 4
+
+### Funcționalități implementate
+
+-  **Trimitere email automată**
+  - Pacientul primește email când **adminul adaugă o programare**
+  - Adminul (**MedConnect**) primește email când **un utilizator își creează cont**
+  - Utilizatorul primește **email de confirmare la înregistrare**
+
+-  **Export fișă medicală în PDF**  
+  - Implementat folosind **TCPDF**
+
+-  **Import analize din fișier CSV**
+
+-  **Integrare informație externă**
+  - Conținut extern parsat / modelat și afișat în aplicație
+
+-  **Element multimedia**
+  - Grafic / statistică în dashboard folosind **Chart.js**
+    
+
+### Link aplicație
+
+- Link: [Tema 4](https://maracazamir-daw-php.infinityfree.me/tema4/)
+
+
+### Conturi de test
+
+| Rol      | Email                   | Parolă        |
+|----------|------------------------|---------------|
+| Admin    | admin@medconnect.com    | 123456        |
+| Pacient  | pacient@mail.com        | pacient123    |
+| Medic    | medic@medconnect.com    | medic123      |
+| Asistent | asistent@medconnect.com | asistent123   |
+
